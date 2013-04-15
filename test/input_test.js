@@ -31,7 +31,7 @@ exports.styleguide = {
     test.expect(1);
 
     var actual = grunt.file.read('release/input.css');
-    var expected = grunt.file.read('test/expected/button.css');
+    var expected = grunt.file.read('test/expected/input.css');
     test.equal(actual, expected, 'should generate correct css');
 
     test.done();
