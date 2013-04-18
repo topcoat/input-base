@@ -1,6 +1,6 @@
 {
   "name": "input",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "TopCoat input base",
   "main": "input.css",
   "directories": {
@@ -23,8 +23,8 @@
   "author": "@an_rei Andrei Oprea",
   "license": "Apache",
   "devDependencies": {
-    "grunt-contrib-stylus": "~0.4.0rc7",
-    "grunt": "~0.4.0rc7",
+    "grunt-contrib-stylus": "~0.4.0",
+    "grunt": "~0.4.0",
     "grunt-contrib-watch": "~0.1.4",
     "grunt-contrib-nodeunit": "~0.1.2"
   }
