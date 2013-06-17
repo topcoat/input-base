@@ -85,7 +85,7 @@ module.exports = function(grunt) {
     grunt.loadTasks('tasks');
 
     // Default task.
-    grunt.registerTask('default', ['build']);
-    grunt.registerTask('build', ['compile', 'cssmin', 'jade', 'nodeunit', 'nodeunit']);
+    grunt.registerTask('default', ['clean', 'build']);
+    grunt.registerTask('build', ['compile', 'cssmin', 'jade', 'nodeunit', 'nodeunit', 'clean']);
 
 };
