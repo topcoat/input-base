@@ -18,25 +18,21 @@ module.exports = function(grunt) {
         },
 
         unzip: {
-            controls: {
-                src: 'tmp/src/controls/*.zip',
-                dest: 'tmp/src/controls'
-            }//,
-            //utils: {
-              //  src: 'tmp/src/utils/*.zip',
-               // dest: 'tmp/src/utils'
-           // }
+            utils: {
+                src: 'tmp/src/utils/*.zip',
+                dest: 'tmp/src/utils'
+            }
         },
 
         clean: {
             tmp: ['tmp'],
-            zip: ['tmp/src/*.zip', 'tmp/src/controls/*.zip', 'tmp/src/skins/*.zip', 'tmp/src/utils/*.zip']
+            zip: ['tmp/src/utils/*.zip']
         },
 
         compile: {
             stylus: {
                 options: {
-                    import: ['variables'],
+                    import: ['input-mixin', 'utils', 'variables'],
                     compress: false
                 },
                 files: {
@@ -76,8 +72,9 @@ module.exports = function(grunt) {
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
     grunt.loadNpmTasks('grunt-contrib-jade');
+    grunt.loadNpmTasks('grunt-contrib-nodeunit');
+    grunt.loadNpmTasks('grunt-topcoat');
     grunt.loadNpmTasks('grunt-zip');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -85,7 +82,7 @@ module.exports = function(grunt) {
     grunt.loadTasks('tasks');
 
     // Default task.
-    grunt.registerTask('default', ['clean', 'build']);
-    grunt.registerTask('build', ['compile', 'cssmin', 'jade', 'nodeunit', 'nodeunit', 'clean']);
+    grunt.registerTask('default', ['clean', 'topcoat', 'build']);
+    grunt.registerTask('build', ['compile', 'cssmin', 'jade', 'nodeunit', 'clean']);
 
 };

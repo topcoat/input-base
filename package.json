@@ -4,7 +4,7 @@
   "description": "Topcoat input base",
   "main": "input.css",
   "topcoat": {
-    "controls": {
+    "utils": {
       "topcoat/utils": ""
     }
   },

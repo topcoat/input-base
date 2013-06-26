@@ -14,11 +14,8 @@ limitations under the License.
 */
 
 .input {
-  vertical-align: top;
   box-sizing: border-box;
-  padding: 0 1.25rem;
-  border-radius: 6px;
-  margin: 5px;
-  height: 3em;
+  background-clip: padding-box;
+  vertical-align: top;
   outline: none;
 }
