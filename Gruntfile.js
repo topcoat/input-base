@@ -1,20 +1,20 @@
 /**
-*
-* Copyright 2012 Adobe Systems Inc.;
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*
-*/
+ *
+ * Copyright 2012 Adobe Systems Inc.;
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
 
 /*global module:false*/
 
@@ -24,19 +24,19 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         clean: {
-            release: ['css'],
+            release: ['css']
         },
 
         stylus: {
             compile: {
                 options: {
-                    paths: ['node_modules/topcoat-utils/src/mixins', 'src/mixins'],
-                    imports: ['utils'],
-                    compress: false
+                    paths: ['node_modules/topcoat-utils/src/mixins'],
+                    import: ['utils'],
+                    compress: false,
                 },
                 files: [{
-                    'src': 'src/input.styl',
-                    'dest': 'css/input.css'
+                    src: 'src/input.styl',
+                    dest: 'css/input.css'
                 }]
             }
         },
@@ -44,14 +44,11 @@ module.exports = function(grunt) {
         cssmin: {
             minify: {
                 expand: true,
-                cwd: 'css',
+                cwd: 'css/',
                 src: ['*.css', '!*.min.css'],
-                dest: 'css',
-                ext: '.min.css',
-                options: {
-                    banner: grunt.file.read('src/copyright.styl').toString()
-                }
-            }
+                dest: 'css/',
+                ext: '.min.css'
+            },
         },
 
         jade: {
@@ -65,10 +62,6 @@ module.exports = function(grunt) {
         },
 
         simplemocha: {
-            options: {
-                ui: 'bdd',
-                reporter: 'Nyan'
-            },
             all: {
                 src: ['test/*.test.js']
             }
@@ -78,18 +71,16 @@ module.exports = function(grunt) {
             files: 'src/**/*.styl',
             tasks: ['build', 'test']
         }
-
     });
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-simple-mocha');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    // Default task.
     grunt.registerTask('default', ['clean', 'build', 'test', 'release']);
     grunt.registerTask('build', ['stylus', 'jade']);
     grunt.registerTask('test', ['simplemocha']);
