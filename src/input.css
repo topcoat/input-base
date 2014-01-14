@@ -15,9 +15,12 @@
 * limitations under the License.
 *
 */
-@import utils
 
-.input
-  reset-input()
-.input:disabled
-  disabled()
+@import "topcoat-utils";
+
+%input {
+  extend: %reset-input;
+}
+%input--disabled {
+  extend: %disabled;
+}
