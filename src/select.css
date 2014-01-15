@@ -18,9 +18,14 @@
 
 @import "topcoat-utils";
 
-%input {
+%select {
   extend: %reset-input;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
-%input--disabled {
+%select--ms {
+  display: none;
+}
+%select--disabled {
   extend: %disabled;
 }

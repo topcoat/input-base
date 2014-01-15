@@ -1,9 +1,9 @@
 {
-  "name": "topcoat-input-base",
-  "version": "0.5.0",
-  "description": "Topcoat input base",
+  "name": "topcoat-select-base",
+  "version": "0.0.1",
+  "description": "Topcoat select base",
   "main": "index.html",
-  "style": "src/input.css",
+  "style": "src/select.css",
   "directories": {
     "test": "test",
     "lib": "src",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/topcoat/input-base.git"
+    "url": "git://github.com/topcoat/select-base.git"
   },
   "keywords": [
     "input",
@@ -24,7 +24,7 @@
     "base",
     "adobe"
   ],
-  "author": "Kristofer Joseph (http://twitter.com/dam)",
+  "author": "Garth Braithwaite (http://garthdb.com/)",
   "contributors": [
     "Kristofer Joseph (http://twitter.com/dam)",
     "Garth Braithwaite (http://garthdb.com/)"

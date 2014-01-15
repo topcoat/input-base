@@ -15,11 +15,14 @@
 * limitations under the License.
 *
 */
-@import "./src/input.css";
+@import "./src/select.css";
 
-.input {
-  extend: %input;
+.select {
+  extend: %select;
 }
-.input:disabled {
-  extend: %input--disabled;
+.select::-ms-expand {
+  extend: %select--ms;
+}
+.select:disabled {
+  extend: %select--disabled;
 }
